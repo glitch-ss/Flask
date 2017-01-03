@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block page_content %}
+
+<div class="container" style="margin-top:200px">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-6">
+                    <a href="#" class="thumbnail">
+                        <img src="{{url_for('static',filename=bags_url_list[0])|safe}}">
+                    </a>
+                </div>
+                <div class="col-md-6">
+                    <div class="col-md-6" align="left">
+                        <div id="test">
+                            <div class="product_name"><b>{{bag_name}}</b></div>
+                        </div>
+                        <hr>
+                        <div id="Details">
+                            <div class="title"><b>DETAILS:</b></div>
+                        </div>
+                        <ul style="list-style-type:circle; width:100%; padding-left:25px;">
+                            {{ details|safe }}
+                        </ul>
+                        <hr>
+                        <div id="Colors" style="list-style-type:none">
+                            <li class="color_name" >
+                                <div  style="height:40px"><b>COLORS: </b></div>
+                                <div  style="hegiht:40px"><p><img src="{{url_for('static',filename=bags_url_list[1])}}"></p></div>
+                            </li>
+                            <li>
+                                <div class="current" style=""></div>
+                            </li>
+                        </div>
+                        <hr>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="#" class="thumbnail">
+                            <img src="{{url_for('static',filename=bags_url_list[0])}}">
+                        </a>
+                    </div>
+                {% for image in bags_url_list[2:] %}
+                <div class="col-md-6">
+                    <a href="#" class="thumbnail">
+                        <img src="{{url_for('static',filename=image)}}">
+                    </a>
+                </div>
+                {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

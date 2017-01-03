@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block page_content %}
+
+<div class="container products">
+    <div class="col-md-1">
+        <ul class="nav nav-pills nav-stacked">
+             <li class="active"><a href="#">Home</a></li>
+             <li><a href="#">Bags</a></li>
+             <li><a href="#">MEN</a></li>
+             <li><a href="#">ACCESSORIES</a></li>
+         </ul>
+    </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+    <ul class="row list-group">
+        {% for image in images %}
+            <li class="col-xs-6 col-sm-3 col-md-3 list-group-item" style="height:360px">
+                <figure>
+                    <a href="/{{brands}}/Bags/{{image}}"><img src="{{ url_for('static', filename=images[image])}}" class="img-rounded img-responsive"></a>
+                </figure>
+                <span align="center">
+                <a id="bag_url" href="/{{brands}}/Bags/{{image}}"><h4>{{image}}</h4></a>
+
+                    <h6>
+
+                    </h6>
+                </span>
+            </li>
+        {% endfor %}
+    </ul>
+    </div>
+</div>
+{% endblock %}

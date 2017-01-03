@@ -1,0 +1,71 @@
+{% extends 'bootstrap/base.html' %}
+{%- block head %}
+	<link rel="stylesheet" href="https://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="{{url_for('static',filename='jquery-3.1.1.js')}}"></script>
+	<script src="https://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/static/css/demo.css" type="text/css">
+    <script type=text/javascript>
+      $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+    </script>
+{%- endblock head %}
+
+{% block body_attribs %}
+
+{% endblock body_attribs %}
+{% block body -%}
+<div class="body_page" align="center">
+    {% block content %}
+    <div class="container" align="center" >
+        <div class="page-header">
+            {% block page_content%}{% endblock %}
+        </div>
+    </div>
+    {% endblock %}
+</div>
+<div class="head_page" style="position:absolute; top:0px;width:100%" align="center">
+<div class="site-banner" style="background-image:url(../static/images/head-bg.png);height:100px" align="center">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-xs-2 col-sm-4 col-md-3">
+                <h1>hahah</h1>
+            </div>
+            <div class="col-xs-5 col-sm-4 col-md-6">
+                <h1>蛋壳里的呸酱</h1>
+            </div>
+            <div class="col-xs-2 col-sm-4 col-md-3">
+                <h1>hehehe</h1>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% block navbar %}
+<div class="navbar navbar-inverse" role="navigation" align="center">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class=sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <li class="active"><a class="navbar-brand" href="/">Home</a></li>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/coach">Coach</a></li>
+            </ul>
+            <ul class="nav navbar-nav">
+                <li><a href="/katespade">Katespade</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+</div>
+
+
+
+{% endblock body -%}
